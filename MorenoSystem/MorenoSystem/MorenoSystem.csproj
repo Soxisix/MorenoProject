@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B95C1848-AC90-4859-8E00-4529F48E06B3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MorenoSystem</RootNamespace>
+    <AssemblyName>MorenoSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Moreno\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>Moreno System</ProductName>
+    <PublisherName>Abando, Baisa, Moreno, Ubana</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>29B3566BC2036BF6A12886AF03AA633F0827DEF4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MorenoSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>morenologoico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\packages\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Diagram.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v17.1" />
+    <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.Printing.v17.1.Core" />
+    <Reference Include="DevExpress.Mvvm.v17.1" />
+    <Reference Include="DevExpress.Xpf.DataAccess.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Diagram.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v17.1" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.MahApps, Version=0.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.MahApps.0.0.10\lib\net45\MaterialDesignThemes.MahApps.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmValidation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=113792d2053ac461, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmValidation.3.0.0\lib\netstandard1.0\MvvmValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RandomNameGeneratorLibrary, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RandomNameGeneratorLibrary.1.2.2.0\lib\net40\RandomNameGeneratorLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Printing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\Converter\BoolToVisibilityCollapsed.cs" />
+    <Compile Include="Common\Converter\DateTimeToDateConverter.cs" />
+    <Compile Include="Common\Converter\Helper\NegateBoolToVisibilityCollapsed.cs" />
+    <Compile Include="Common\Converter\Helper\PasswordBoxAssistant.cs" />
+    <Compile Include="Common\Converter\RequirementConverter.cs" />
+    <Compile Include="Common\Enums\EnumGender.cs" />
+    <Compile Include="Common\Enums\LoginType.cs" />
+    <Compile Include="Common\Enums\SourceType.cs" />
+    <Compile Include="Common\Enums\YearDatePicker.cs" />
+    <Compile Include="Common\ItemsChangeObservableCollection.cs" />
+    <Compile Include="Common\ListExtensions.cs" />
+    <Compile Include="Common\Messages\EndElectionMessage.cs" />
+    <Compile Include="Common\Messages\NewBookUpdate.cs" />
+    <Compile Include="Common\Messages\PartyListAdd.cs" />
+    <Compile Include="Common\Messages\SetNavigation.cs" />
+    <Compile Include="Common\Messages\StartLoginDialog.cs" />
+    <Compile Include="Common\Messages\SubmitVoteMessage.cs" />
+    <Compile Include="Common\Messages\UpdateTeacherMessage.cs" />
+    <Compile Include="Common\SelectItemOnButtonClick.cs" />
+    <Compile Include="Common\Validator\ValidatableViewModelBase.cs" />
+    <Compile Include="Common\YearPicker.cs" />
+    <Compile Include="DXSplashScreen\SplashScreenView1.xaml.cs">
+      <DependentUpon>SplashScreenView1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AdministratorViewModel.cs" />
+    <Compile Include="ViewModels\Library\BookListViewModel.cs" />
+    <Compile Include="ViewModels\Library\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\Library\LibraryReportViewModel.cs" />
+    <Compile Include="ViewModels\Library\TransactionViewModel.cs" />
+    <Compile Include="ViewModels\Students\RequirementsViewModel.cs" />
+    <Compile Include="ViewModels\Students\StudentAddViewModel.cs" />
+    <Compile Include="ViewModels\Students\StudentViewModel.cs" />
+    <Compile Include="ViewModels\Students\YearSectionViewModel.cs" />
+    <Compile Include="ViewModels\Teachers\AdviserViewModel.cs" />
+    <Compile Include="ViewModels\Teachers\TeacherListViewModel.cs" />
+    <Compile Include="ViewModels\Vote\Admin\ElectionHistoryViewModel.cs" />
+    <Compile Include="ViewModels\Vote\Admin\ManagePositionViewModel.cs" />
+    <Compile Include="ViewModels\Vote\Admin\PartyListViewModel.cs" />
+    <Compile Include="ViewModels\Vote\Admin\VoteResultViewModel.cs" />
+    <Compile Include="ViewModels\Vote\Voters\ElectionVoteViewModel.cs" />
+    <Compile Include="ViewModels\Vote\Voters\VoterProfileViewModel.cs" />
+    <Compile Include="Views\Administrator\AdminView.xaml.cs">
+      <DependentUpon>AdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\EditMainUser.xaml.cs">
+      <DependentUpon>EditMainUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\EditTeacherUser.xaml.cs">
+      <DependentUpon>EditTeacherUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Administrator\EditUser.xaml.cs">
+      <DependentUpon>EditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\ChangeServerView.xaml.cs">
+      <DependentUpon>ChangeServerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\FieldMessageDialog.xaml.cs">
+      <DependentUpon>FieldMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\OkCancelMessageDialog.xaml.cs">
+      <DependentUpon>OkCancelMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\OkCancelNumericDialog.xaml.cs">
+      <DependentUpon>OkCancelNumericDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\OkMessageDialog.xaml.cs">
+      <DependentUpon>OkMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\PleaseWaitView.xaml.cs">
+      <DependentUpon>PleaseWaitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Common\ReturnDialog.xaml.cs">
+      <DependentUpon>ReturnDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\BookAddView.xaml.cs">
+      <DependentUpon>BookAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\BookEditView.xaml.cs">
+      <DependentUpon>BookEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\BookListView.xaml.cs">
+      <DependentUpon>BookListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\CategoryView.xaml.cs">
+      <DependentUpon>CategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookCategoryReportcs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookCategoryReportcs.Designer.cs">
+      <DependentUpon>BookCategoryReportcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookDamageReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookDamageReport.Designer.cs">
+      <DependentUpon>BookDamageReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookListReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookListReport.Designer.cs">
+      <DependentUpon>BookListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookOutdatedReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Library\Report\BookOutdatedReport.Designer.cs">
+      <DependentUpon>BookOutdatedReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\Report\LibraryReportView.xaml.cs">
+      <DependentUpon>LibraryReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\TransactionDetailView.xaml.cs">
+      <DependentUpon>TransactionDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Library\TransactionView.xaml.cs">
+      <DependentUpon>TransactionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentListReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentListReport.Designer.cs">
+      <DependentUpon>StudentListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Students\StudentReportViewModel.cs" />
+    <Compile Include="Views\Student\Report\StudentReportView.xaml.cs">
+      <DependentUpon>StudentReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentMasterListReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentMasterListReport.Designer.cs">
+      <DependentUpon>StudentMasterListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentSectionReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentSectionReport.Designer.cs">
+      <DependentUpon>StudentSectionReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentYearReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Student\Report\StudentYearReport.Designer.cs">
+      <DependentUpon>StudentYearReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\StudentList\RequirementsView.xaml.cs">
+      <DependentUpon>RequirementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\StudentList\StudentAddView.xaml.cs">
+      <DependentUpon>StudentAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\StudentList\StudentEditView.xaml.cs">
+      <DependentUpon>StudentEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\StudentList\StudentListView.xaml.cs">
+      <DependentUpon>StudentListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\StudentList\StudentView.xaml.cs">
+      <DependentUpon>StudentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Student\StudentList\YearSectionView.xaml.cs">
+      <DependentUpon>YearSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\AdviserView.xaml.cs">
+      <DependentUpon>AdviserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\TeacherAddView.xaml.cs">
+      <DependentUpon>TeacherAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\TeacherEditView.xaml.cs">
+      <DependentUpon>TeacherEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\TeacherListView.xaml.cs">
+      <DependentUpon>TeacherListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vote\Admin\ElectionHistoryView.xaml.cs">
+      <DependentUpon>ElectionHistoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vote\Admin\ManagePositionView.xaml.cs">
+      <DependentUpon>ManagePositionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vote\Admin\MemberSelectionView.xaml.cs">
+      <DependentUpon>MemberSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vote\Admin\PartyListView.xaml.cs">
+      <DependentUpon>PartyListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vote\Admin\VoteResultView.xaml.cs">
+      <DependentUpon>VoteResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vote\Voters\ElectionVoteView.xaml.cs">
+      <DependentUpon>ElectionVoteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vote\Voters\VoterProfileView.xaml.cs">
+      <DependentUpon>VoterProfileView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DXSplashScreen\SplashScreenView1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\NavigationItem.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\Administrator\AdminView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\EditMainUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\EditTeacherUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Administrator\EditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\ChangeServerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\FieldMessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\OkCancelMessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\OkCancelNumericDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\OkMessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\PleaseWaitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\ReturnDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Library\BookAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Library\BookEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Library\BookListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Library\CategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Library\Report\LibraryReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Library\TransactionDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Library\TransactionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\Report\StudentReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\StudentList\RequirementsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\StudentList\StudentAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\StudentList\StudentEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\StudentList\StudentListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\StudentList\StudentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Student\StudentList\YearSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Teacher\AdviserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Teacher\TeacherAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Teacher\TeacherEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Teacher\TeacherListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vote\Admin\ElectionHistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vote\Admin\ManagePositionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vote\Admin\MemberSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vote\Admin\PartyListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vote\Admin\VoteResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vote\Voters\ElectionVoteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Vote\Voters\VoterProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyEFContext\Initializers\ModelChangeInitializer.cs" />
+    <Compile Include="MyEFContext\Initializers\NotExistInitializer.cs" />
+    <Compile Include="MyEFContext\MorenoContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Library\Report\BookCategoryReportcs.resx">
+      <DependentUpon>BookCategoryReportcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Library\Report\BookDamageReport.resx">
+      <DependentUpon>BookDamageReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Library\Report\BookListReport.resx">
+      <DependentUpon>BookListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Library\Report\BookOutdatedReport.resx">
+      <DependentUpon>BookOutdatedReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\Report\StudentListReport.resx">
+      <DependentUpon>StudentListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\Report\StudentMasterListReport.resx">
+      <DependentUpon>StudentMasterListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\Report\StudentSectionReport.resx">
+      <DependentUpon>StudentSectionReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Student\Report\StudentYearReport.resx">
+      <DependentUpon>StudentYearReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MorenoSystem_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MorenoSystem.Entities\MorenoSystem.Entities.csproj">
+      <Project>{1447e677-8d5b-4300-aa98-62520469754e}</Project>
+      <Name>MorenoSystem.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\morenologo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MyEFContext\Repository\" />
+    <Folder Include="MyEFContext\UnitofWork\" />
+    <Folder Include="Reports\StudentReport\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DXSplashScreen\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="morenologoico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Profilepic\1.jpg" />
+    <Resource Include="Images\Profilepic\2.jpg" />
+    <Resource Include="Images\Profilepic\3.jpg" />
+    <Resource Include="Images\Profilepic\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DXSplashScreen\ACLC_PNG.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

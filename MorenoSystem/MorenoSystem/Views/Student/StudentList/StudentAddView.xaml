@@ -1,0 +1,417 @@
+﻿<UserControl
+	x:Class="MorenoSystem.Views.Student.StudentList.StudentAddView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:MorenoSystem.Views.Student.StudentList"
+	xmlns:students="clr-namespace:MorenoSystem.ViewModels.Students"
+	xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+	xmlns:system="clr-namespace:System;assembly=mscorlib"
+	xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+	mc:Ignorable="d"
+	xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+	TextElement.FontWeight="Regular"
+	TextElement.FontSize="15"
+	TextOptions.TextFormattingMode="Ideal"
+	TextOptions.TextRenderingMode="Auto"
+	MaxHeight="615"
+	Background="{DynamicResource MaterialDesignPaper}"
+	FontFamily="{DynamicResource MaterialDesignFont}"
+	d:DataContext="{d:DesignInstance Type=students:StudentViewModel, IsDesignTimeCreatable=True}">
+
+	<materialDesign:Card>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="1*" />
+			</Grid.RowDefinitions>
+			<materialDesign:ColorZone
+				Mode="PrimaryMid"
+				Padding="10">
+				<StackPanel
+					Orientation="Horizontal">
+					<Button
+						ToolTip="Go back"
+						Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+						Width="50"
+						Height="34"
+						VerticalAlignment="Bottom"
+						Style="{StaticResource MaterialDesignToolForegroundButton}"						HorizontalContentAlignment="Center"
+						HorizontalAlignment="Right">
+						<Button.CommandParameter>
+							<system:String>Exit</system:String>
+						</Button.CommandParameter>
+						<Viewbox>
+							<materialDesign:PackIcon HorizontalAlignment="Right" Kind="ArrowLeft"></materialDesign:PackIcon>
+						</Viewbox>
+					</Button>
+					<TextBlock
+						Style="{StaticResource MaterialDesignHeadlineTextBlock}" VerticalAlignment="Center"
+						Margin="10,0">
+						Register New Student
+					</TextBlock>
+					
+				</StackPanel>
+			</materialDesign:ColorZone>
+			<ScrollViewer
+				Grid.Row="1">
+				<Grid
+					Margin="20">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="Auto" />
+						<ColumnDefinition
+							Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition
+							Height="Auto" />
+						<RowDefinition />
+					</Grid.RowDefinitions>
+					<dxe:ImageEdit
+						EditValue="{Binding Photo}"
+						Stretch="Fill"
+						VerticalAlignment="Top"
+						ShowLoadDialogOnClickMode="Never"
+						Grid.RowSpan="5"
+						Height="200"
+						Width="250"
+						Grid.Column="0"
+						Margin="0,10,20,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="1"
+						Grid.Row="0"
+						FontWeight="SemiBold"
+						Text="First Name"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="1"
+						Grid.Row="1"
+						FontWeight="SemiBold"
+						Text="Middle Name"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="1"
+						Grid.Row="2"
+						FontWeight="SemiBold"
+						Text="Last Name"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="1"
+						Grid.Row="3"
+						FontWeight="SemiBold"
+						Text="Gender"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="1"
+						Grid.Row="4"
+						FontWeight="SemiBold"
+						Text="Contact No."
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="1"
+						Grid.Row="5"
+						FontWeight="SemiBold"
+						Text="Birthday"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="3"
+						Grid.Row="0"
+						FontWeight="SemiBold"
+						Text="LRN"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="3"
+						Grid.Row="1"
+						FontWeight="SemiBold"
+						Text="School Year"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="3"
+						Grid.Row="2"
+						FontWeight="SemiBold"
+						Text="Year Level"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="3"
+						Grid.Row="3"
+						FontWeight="SemiBold"
+						Text="Section"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="3"
+						Grid.Row="4"
+						FontWeight="SemiBold"
+						Text="Address"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+
+					<TextBox
+						Name="TxtFirstName"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="2"
+						Grid.Row="0"
+						Text="{Binding FirstName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200">
+
+					</TextBox>
+					<TextBox
+						Name="TxtMiddleName"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="2"
+						Grid.Row="1"
+						Text="{Binding MiddleName, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<TextBox
+						Name="TxtLastName"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="2"
+						Grid.Row="2"
+						Text="{Binding LastName, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<ComboBox
+						Name="TxtGender"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						materialDesign:HintAssist.Hint="Select Gender"
+						ItemsSource="{Binding GenderList}"
+						SelectedItem="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}"
+						MaxWidth="200"
+						Grid.Column="2"
+						Grid.Row="3"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<TextBox
+						Name="TxtContact"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="2"
+						Grid.Row="4"
+						Text="{Binding Contact, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<DatePicker
+						Name="BirtDatePicker"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						materialDesign:HintAssist.Hint="SelectDate"
+						MaxWidth="200"
+						SelectedDateFormat="Short"
+						Grid.Column="2"
+						Grid.Row="5"
+						SelectedDate="{Binding Birthdate, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<TextBox
+						Name="TxtLrn"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="4"
+						Grid.Row="0"
+						Text="{Binding LRN, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<TextBox
+						Name="TxtSchoolYear"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="4"
+						Grid.Row="1"
+						Text="{Binding SchoolYear, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<ComboBox
+						Name="TxtYearlevel"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						materialDesign:HintAssist.Hint="Select Year Level"
+						DisplayMemberPath="Name"
+						MaxWidth="200"
+						Grid.Column="4"
+						Grid.Row="2"
+						ItemsSource="{Binding YearLevels}"
+						SelectedItem="{Binding SelectedYearLevel, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<ComboBox
+						Name="TxtSection"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						materialDesign:HintAssist.Hint="Select Section"
+						DisplayMemberPath="Name"
+						MaxWidth="200"
+						Grid.Column="4"
+						Grid.Row="3"
+						ItemsSource="{Binding Sections}"
+						SelectedItem="{Binding SelectedSection, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<TextBox
+						Name="TxtAddress"
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="4"
+						Grid.Row="4"
+						Text="{Binding Address, ValidatesOnNotifyDataErrors=True,  UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center"
+						Margin="0,0,20,0" MinWidth="200" />
+					<TabControl
+						Grid.ColumnSpan="5"
+						Margin="0,20,0,0"
+						Grid.Row="6"
+						Grid.Column="0">
+						<TabItem
+							Header="Requirements">
+							<Grid
+								Height="235">
+								<ListView
+									SelectedItem="{Binding SelectedNewRequirement}"
+									ItemsSource="{Binding NewStudentRequirements}"
+									SelectedIndex="0">
+									<ListView.View>
+										<GridView>
+											<GridViewColumn>
+												<GridViewColumn.CellTemplate>
+													<DataTemplate>
+														<TextBlock
+															VerticalAlignment="Center"
+															Text="{Binding Name}">
+														</TextBlock>
+													</DataTemplate>
+												</GridViewColumn.CellTemplate>
+												<GridViewColumn.HeaderTemplate>
+													<DataTemplate>
+														<TextBlock
+															Text="Requirement">
+														</TextBlock>
+													</DataTemplate>
+												</GridViewColumn.HeaderTemplate>
+											</GridViewColumn>
+											<GridViewColumn>
+												<GridViewColumn.CellTemplate>
+													<DataTemplate>
+														<CheckBox
+															IsChecked="{Binding Status}"></CheckBox>
+
+													</DataTemplate>
+												</GridViewColumn.CellTemplate>
+												<GridViewColumn.HeaderTemplate>
+													<DataTemplate>
+														<TextBlock
+															Text="Status">
+														</TextBlock>
+
+													</DataTemplate>
+												</GridViewColumn.HeaderTemplate>
+											</GridViewColumn>
+
+										</GridView>
+									</ListView.View>
+								</ListView>
+							</Grid>
+						</TabItem>
+
+					</TabControl>
+					<Grid x:Name="ErrorsSummaryContainer"
+						  Grid.Column="0"
+						  Grid.ColumnSpan="4"
+						  Grid.Row="7"
+						  Visibility="{Binding IsValid, Converter={StaticResource BoolToVisibilityCollapsed}}"
+						  Margin="0,10,10,0">
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+
+						<TextBlock Text="Plase correct the following errors before proceeding:"
+								   Foreground="Red"
+								   FontWeight="SemiBold" />
+						<TextBlock Grid.Row="1"
+								   Text="{Binding ValidationErrorsString}"
+								   Foreground="Red"
+								   Margin="0,5,0,0" />
+
+					</Grid>
+					<StackPanel
+						Grid.Column="4"
+						Orientation="Horizontal"
+						Grid.Row="7"
+						VerticalAlignment="Bottom"
+						HorizontalAlignment="Right">
+						<Button
+							Content="Add"
+							Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+							Width="80"
+							VerticalAlignment="Bottom"
+							HorizontalContentAlignment="Center"
+							HorizontalAlignment="Right"
+							Margin="0,20,10,0" >
+							<Button.CommandParameter>
+								<system:String>Add</system:String>
+							</Button.CommandParameter>
+						</Button>
+					   
+
+
+					</StackPanel>
+
+				</Grid>
+			</ScrollViewer>
+		</Grid>
+	</materialDesign:Card>
+
+</UserControl>

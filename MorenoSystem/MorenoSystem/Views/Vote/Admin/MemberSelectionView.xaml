@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="MorenoSystem.Views.Vote.Admin.MemberSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MorenoSystem.Views.Vote.Admin"
+             xmlns:admin="clr-namespace:MorenoSystem.ViewModels.Vote.Admin"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="15"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             MaxHeight="615"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DataContext="{d:DesignInstance Type=admin:PartyListViewModel, IsDesignTimeCreatable=True}">
+
+	<materialDesign:Card>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<materialDesign:ColorZone Mode="PrimaryMid"
+			                          Padding="10">
+				<StackPanel Orientation="Horizontal">
+					<Button ToolTip="Go back"
+					        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+					        Width="50"
+					        Height="34"
+					        VerticalAlignment="Bottom"
+					        Style="{StaticResource MaterialDesignToolForegroundButton}"
+					        HorizontalContentAlignment="Center"
+					        HorizontalAlignment="Right">
+						<Viewbox>
+							<materialDesign:PackIcon HorizontalAlignment="Right"
+							                         Kind="ArrowLeft"></materialDesign:PackIcon>
+						</Viewbox>
+					</Button>
+					<TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+					           VerticalAlignment="Center"
+					           Margin="10,0">Student List</TextBlock>
+
+				</StackPanel>
+			</materialDesign:ColorZone>
+			<Grid Margin="15,15,15,0"
+			      Grid.Row="1"
+			      Height="32">
+
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<materialDesign:PackIcon Grid.Column="0"
+				                         VerticalAlignment="Center"
+				                         Kind="Magnify"
+				                         Opacity=".80"
+				                         Height="Auto"
+				                         Width="Auto"
+				                         Margin="0,4" />
+				<TextBox Grid.Column="1"
+				         Text="{Binding SearchStudent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=700}"
+				         materialDesign:HintAssist.Hint="Search a student"
+				         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+				         BorderThickness="0" />
+				<Button Grid.Column="2"
+				        Style="{DynamicResource MaterialDesignToolButton}"
+				        Height="Auto"
+				        HorizontalAlignment="Right">
+					<materialDesign:PackIcon Kind="Send"
+					                         Opacity=".80"
+					                         Margin="8 0 0 0" />
+				</Button>
+			</Grid>
+			<ListView Grid.Row="2"
+			          Height="400"
+			          ItemsSource="{Binding StudentList}"
+			          SelectedItem="{Binding SelectedStudent}"
+			          SelectionMode="Single"
+			          VirtualizingStackPanel.IsVirtualizing="True"
+			          Margin="15,0,15,15">
+				<i:Interaction.Triggers>
+					<i:EventTrigger EventName="MouseDoubleClick">
+						<i:InvokeCommandAction Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
+							<i:InvokeCommandAction.CommandParameter>
+								<system:Boolean>True</system:Boolean>
+							</i:InvokeCommandAction.CommandParameter>
+						</i:InvokeCommandAction>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+				<ListView.View>
+					<GridView>
+						<GridViewColumn>
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding FullName}" Margin="0,0,15,0" ></TextBlock>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+							<GridViewColumn.HeaderTemplate>
+								<DataTemplate>
+									<TextBlock Text="Name"></TextBlock>
+								</DataTemplate>
+							</GridViewColumn.HeaderTemplate>
+						</GridViewColumn>
+
+						<GridViewColumn>
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding YearLevel.Name}"></TextBlock>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+							<GridViewColumn.HeaderTemplate>
+								<DataTemplate>
+									<TextBlock Text="Year Level"></TextBlock>
+								</DataTemplate>
+							</GridViewColumn.HeaderTemplate>
+						</GridViewColumn>
+
+						<GridViewColumn>
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Section.Name}"></TextBlock>
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+							<GridViewColumn.HeaderTemplate>
+								<DataTemplate>
+									<TextBlock Text="Section"></TextBlock>
+								</DataTemplate>
+							</GridViewColumn.HeaderTemplate>
+						</GridViewColumn>
+					</GridView>
+				</ListView.View>
+			</ListView>
+			<Button Grid.Row="3"
+			        HorizontalAlignment="Right"
+			        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+			        Margin="15">
+				<Button.CommandParameter>
+					<system:Boolean>True</system:Boolean>
+				</Button.CommandParameter>
+				Assign
+			</Button>
+		</Grid>
+	</materialDesign:Card>
+</UserControl>

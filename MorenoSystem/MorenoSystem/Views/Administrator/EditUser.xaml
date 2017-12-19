@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="MorenoSystem.Views.Administrator.EditUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MorenoSystem.Views.Administrator"
+             xmlns:library="clr-namespace:MorenoSystem.ViewModels.Library"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewModels="clr-namespace:MorenoSystem.ViewModels"
+             mc:Ignorable="d" 
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="15"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             MaxHeight="615"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DataContext="{d:DesignInstance Type=viewModels:AdministratorViewModel, IsDesignTimeCreatable=True}">
+	<materialDesign:Card>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="1*" />
+			</Grid.RowDefinitions>
+			<materialDesign:ColorZone
+				Mode="PrimaryMid"
+				Padding="10">
+				<StackPanel
+					Orientation="Horizontal">
+					<Button
+						ToolTip="Go back"
+						Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+						Width="50"
+						Height="34"
+						VerticalAlignment="Bottom"
+						Style="{StaticResource MaterialDesignToolForegroundButton}"						HorizontalContentAlignment="Center"
+						HorizontalAlignment="Right">
+						<Button.CommandParameter>
+							<system:Boolean>False</system:Boolean>
+						</Button.CommandParameter>
+						<Viewbox>
+							<materialDesign:PackIcon HorizontalAlignment="Right" Kind="ArrowLeft"></materialDesign:PackIcon>
+						</Viewbox>
+					</Button>
+					<TextBlock
+						Style="{StaticResource MaterialDesignHeadlineTextBlock}" VerticalAlignment="Center"
+						Margin="10,0">
+						Edit User
+					</TextBlock>
+
+				</StackPanel>
+			</materialDesign:ColorZone>
+			<ScrollViewer Grid.Row="1">
+
+				<Grid Margin="20">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+
+					</Grid.RowDefinitions>
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="0"
+						FontWeight="SemiBold"
+						Text="Username"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="1"
+						FontWeight="SemiBold"
+						Text="Password"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+
+					<TextBlock
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						Grid.Row="0"
+						Text="{Binding SelectedStudent.User.UserName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBlock>
+					<TextBox
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						Grid.Row="1"
+						Text="{Binding SelectedStudent.User.Password, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBox>
+
+					<Button
+						Grid.Row="2"
+						Grid.Column="1"
+						Content="Update"
+						Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+						VerticalAlignment="Bottom"
+						HorizontalContentAlignment="Center"
+						HorizontalAlignment="Right"
+						Margin="0,20,10,0" >
+						<Button.CommandParameter>
+							<system:String>Update</system:String>
+						</Button.CommandParameter>
+					</Button>
+					<!--<Grid x:Name="ErrorsSummaryContainer"
+					      Grid.Column="0"
+					      Grid.Row="7"
+					      Visibility="{Binding IsValid, Converter={StaticResource BoolToVisibilityCollapsed}}"
+					      Margin="0,10,10,0">
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+
+						<TextBlock Text=""
+						           Foreground="Red"
+						           FontWeight="SemiBold" />
+						<TextBlock Grid.Row="1"
+						           Text="{Binding ValidationErrorsString}"
+						           Foreground="Red"
+						           Margin="0,5,0,0" />
+
+					</Grid>-->
+
+				</Grid>
+			</ScrollViewer>
+
+		</Grid>
+		</materialDesign:Card>
+
+</UserControl>
+

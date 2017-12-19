@@ -1,0 +1,384 @@
+﻿<UserControl x:Class="MorenoSystem.Views.Vote.Voters.VoterProfileView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="clr-namespace:MorenoSystem.Views.Vote.Voters"
+			 mc:Ignorable="d"
+			 MaxHeight="650"
+			 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+			 xmlns:voters="clr-namespace:MorenoSystem.ViewModels.Vote.Voters"
+			 xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+			 xmlns:helper="clr-namespace:MorenoSystem.Common.Converter.Helper"
+			 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+			 TextElement.FontWeight="Regular"
+			 TextElement.FontSize="15"
+			 HorizontalAlignment="Center"
+			 VerticalAlignment="Stretch"
+			 TextOptions.TextFormattingMode="Ideal"
+			 TextOptions.TextRenderingMode="Auto"
+			 Background="{DynamicResource MaterialDesignPaper}"
+			 FontFamily="{DynamicResource MaterialDesignFont}"
+			 d:DataContext="{d:DesignInstance Type=voters:VoterProfileViewModel, IsDesignTimeCreatable=True}">
+
+	<materialDesign:Card Margin="20">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="1*" />
+			</Grid.RowDefinitions>
+			<materialDesign:ColorZone Mode="PrimaryMid"
+									  Padding="10">
+				<StackPanel Orientation="Horizontal">
+
+					<TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+							   VerticalAlignment="Center"
+							   Text="{Binding CurrentStudent.FullName}"
+							   Margin="10,0"></TextBlock>
+
+				</StackPanel>
+			</materialDesign:ColorZone>
+			<ScrollViewer Grid.Row="1">
+
+				<Grid Margin="20">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition />
+					</Grid.RowDefinitions>
+					<dxe:ImageEdit EditValue="{Binding SelectedStudent.Photo}"
+								   VerticalAlignment="Top"
+								   Stretch="Fill"
+								   ShowMenu="False"
+								   ShowLoadDialogOnClickMode="Never"
+								   Grid.RowSpan="5"
+								   Height="200"
+								   Width="250"
+								   Grid.Column="0"
+								   Margin="0,10,20,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="1"
+							   Grid.Row="0"
+							   FontWeight="SemiBold"
+							   Text="First Name"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="1"
+							   Grid.Row="1"
+							   FontWeight="SemiBold"
+							   Text="Middle Name"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="1"
+							   Grid.Row="2"
+							   FontWeight="SemiBold"
+							   Text="Last Name"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="1"
+							   Grid.Row="3"
+							   FontWeight="SemiBold"
+							   Text="Gender"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="1"
+							   Grid.Row="4"
+							   FontWeight="SemiBold"
+							   Text="Contact No."
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="1"
+							   Grid.Row="5"
+							   FontWeight="SemiBold"
+							   Text="Birthday"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="3"
+							   Grid.Row="0"
+							   FontWeight="SemiBold"
+							   Text="LRN"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="3"
+							   Grid.Row="1"
+							   FontWeight="SemiBold"
+							   Text="School Year"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="3"
+							   Grid.Row="2"
+							   FontWeight="SemiBold"
+							   Text="Year Level"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="3"
+							   Grid.Row="3"
+							   FontWeight="SemiBold"
+							   Text="Section"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+					<TextBlock TextWrapping="Wrap"
+							   Grid.Column="3"
+							   Grid.Row="4"
+							   FontWeight="SemiBold"
+							   Text="Address"
+							   VerticalAlignment="Center"
+							   Margin="0,0,10,0" />
+
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="2"
+							   Grid.Row="0"
+							   Text="{Binding CurrentStudent.FirstName}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="2"
+							   Grid.Row="1"
+							   Text="{Binding CurrentStudent.MiddleName}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="2"
+							   Grid.Row="2"
+							   Text="{Binding CurrentStudent.LastName}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="2"
+							   Grid.Row="3"
+							   Text="{Binding CurrentStudent.Gender}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="2"
+							   Grid.Row="4"
+							   Text="{Binding CurrentStudent.Contact}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="2"
+							   Grid.Row="5"
+							   Text="{Binding CurrentStudent.BirthDate, Converter={StaticResource DateTimeToDateConverter}}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="4"
+							   Grid.Row="0"
+							   Text="{Binding CurrentStudent.LRN}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="4"
+							   Grid.Row="1"
+							   Text="{Binding CurrentStudent.SchoolYear}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="4"
+							   Grid.Row="2"
+							   Text="{Binding CurrentStudent.YearLevel.Name}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="4"
+							   Grid.Row="3"
+							   Text="{Binding CurrentStudent.Section.Name}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TextBlock TextWrapping="Wrap"
+							   MaxWidth="200"
+							   Grid.Column="4"
+							   Grid.Row="4"
+							   Text="{Binding CurrentStudent.Address}"
+							   VerticalAlignment="Center"
+							   Margin="0,0,20,0"
+							   MinWidth="100" />
+					<TabControl Grid.ColumnSpan="5"
+								Margin="0,20,0,0"
+								Grid.Row="6"
+								Grid.Column="0">
+						<TabItem Header="Requirements">
+							<Grid Height="185">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+								<ListView VirtualizingStackPanel.IsVirtualizing="True"
+										  ItemsSource="{Binding Requirements}">
+									<ListView.View>
+										<GridView>
+											<GridViewColumn>
+												<GridViewColumn.CellTemplate>
+													<DataTemplate>
+														<TextBlock Text="{Binding Requirement.Name}"></TextBlock>
+													</DataTemplate>
+												</GridViewColumn.CellTemplate>
+												<GridViewColumn.HeaderTemplate>
+													<DataTemplate>
+														<TextBlock Text="Requirement"></TextBlock>
+													</DataTemplate>
+												</GridViewColumn.HeaderTemplate>
+											</GridViewColumn>
+											<GridViewColumn>
+												<GridViewColumn.CellTemplate>
+													<DataTemplate>
+														<TextBlock Text="{Binding Status, Converter={StaticResource RequirementConverter}}"></TextBlock>
+													</DataTemplate>
+												</GridViewColumn.CellTemplate>
+												<GridViewColumn.HeaderTemplate>
+													<DataTemplate>
+														<TextBlock Text="Status"></TextBlock>
+													</DataTemplate>
+												</GridViewColumn.HeaderTemplate>
+											</GridViewColumn>
+										</GridView>
+									</ListView.View>
+								</ListView>
+
+							</Grid>
+						</TabItem>
+						<TabItem Header="Login Details">
+							<Grid Margin="20"
+								  Height="145">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="1*"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+
+								<TextBlock Grid.Column="0"
+										   Grid.Row="0"
+										   VerticalAlignment="Center"
+										   Grid.ColumnSpan="2"
+										   Margin="0,0,0,1">Username</TextBlock>
+								<TextBlock Grid.Row="2"
+										   Margin="0,16,0,0"
+										   VerticalAlignment="Center"
+										   Grid.ColumnSpan="2"
+								           Grid.Column="0">Password:</TextBlock>
+								<TextBlock Grid.Row="1"
+										   Text="{Binding UserDetails.UserName}"
+										   Margin="0,8,0,3"
+								           Grid.ColumnSpan="2"
+										   VerticalAlignment="Center"
+										   Grid.Column="0" />
+								<TextBlock Grid.Row="3"
+										   Visibility="{Binding ShowPassword, Converter={StaticResource BoolToVisibilityCollapsed}}"
+										   Height="18"
+										   Text="{Binding UserDetails.Password}"
+										   Margin="0,8,0,3"
+										   VerticalAlignment="Center"
+										   Grid.ColumnSpan="2"
+								           Grid.Column="0" />
+								<PasswordBox Grid.Row="3"
+											 Grid.Column="0"
+								             Grid.ColumnSpan="2"
+											 BorderThickness="0"
+											 Style="{x:Null}"
+											 Height="18"
+											 Focusable="False"
+											 IsHitTestVisible="False"
+											 Visibility="{Binding ShowPassword, Converter={StaticResource NegateBoolToVisibilityCollapsed}}"
+											 helper:PasswordBoxAssistant.BindPassword="true"
+											 helper:PasswordBoxAssistant.BoundPassword="{Binding UserDetails.Password, Mode=TwoWay}"
+											 Margin="0,8,0,3"
+											 VerticalAlignment="Center"></PasswordBox>
+								<CheckBox Grid.Row="3"
+										  HorizontalAlignment="Left"
+										  IsChecked="{Binding ShowPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+										  VerticalAlignment="Center"
+										  Grid.Column="2"
+										  Margin="10,8,0,3">Show</CheckBox>
+
+								<!--<Button Width="120"
+										Margin="0,8,0,3"
+										Height="18"
+										Style="{DynamicResource MaterialDesignFlatButton}"
+
+										FontSize="10"
+										HorizontalAlignment="Left"
+										Grid.Column="2"
+										Grid.Row="1">Change Username</Button>
+								<Button Width="120"
+										Margin="0,8,0,3"
+										Height="18"
+										Style="{DynamicResource MaterialDesignFlatButton}"
+
+										FontSize="10"
+										HorizontalAlignment="Left"
+										Grid.Column="2"
+										Grid.Row="3">Change Password</Button>-->
+							</Grid>
+						</TabItem>
+						<TabItem Header="Election">
+							<Grid Margin="20" Height="145">
+								<Button Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:ShadowAssist.ShadowDepth="Depth3" Height="40" MinWidth="100" HorizontalAlignment="Center"  Command="{Binding VoteCommand}">
+									<Viewbox>
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition />
+												<ColumnDefinition />
+											</Grid.ColumnDefinitions>
+											<materialDesign:PackIcon Kind="Fingerprint"></materialDesign:PackIcon>
+											<TextBlock Grid.Column="1" Text="{Binding VoteStatusMessage}"></TextBlock>
+										</Grid>
+									</Viewbox>
+								</Button>
+							</Grid>
+						</TabItem>
+
+					</TabControl>
+
+				</Grid>
+			</ScrollViewer>
+		</Grid>
+
+	</materialDesign:Card>
+
+</UserControl>

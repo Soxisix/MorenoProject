@@ -1,0 +1,46 @@
+﻿<Application
+    x:Class="MorenoSystem.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:MorenoSystem.Common.Converter"
+    xmlns:helper="clr-namespace:MorenoSystem.Common.Converter.Helper"
+    StartupUri="MainWindow.xaml"
+    Startup="OnAppStartup_UpdateThemeName">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <converter:DateTimeToDateConverter x:Key="DateTimeToDateConverter" />
+	        <converter:RequirementConverter x:Key="RequirementConverter" />
+	        <converter:BoolToVisibilityCollapsed x:Key="BoolToVisibilityCollapsed" />
+	        <helper:NegateBoolToVisibilityCollapsed x:Key="NegateBoolToVisibilityCollapsed"/>
+			<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/baselight.xaml" />
+                <!--Material Deisgn Resource-->
+                <ResourceDictionary
+                    Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+
+                <ResourceDictionary
+                    Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+
+                <ResourceDictionary
+                    Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+
+                <ResourceDictionary
+                    Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+
+
+
+
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+
+
+
+
+
+
+

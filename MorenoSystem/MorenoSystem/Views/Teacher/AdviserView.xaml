@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="MorenoSystem.Views.Teacher.AdviserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MorenoSystem.Views.Teacher"
+             mc:Ignorable="d"
+             xmlns:teachers="clr-namespace:MorenoSystem.ViewModels.Teachers"
+             VerticalAlignment="Stretch"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:common="clr-namespace:MorenoSystem.Common"
+             HorizontalAlignment="Center"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="15"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DataContext="{d:DesignInstance Type=teachers:AdviserViewModel, IsDesignTimeCreatable=True}">
+
+	<Grid Margin="20">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<materialDesign:Card VerticalAlignment="Stretch"
+		                     Grid.Column="0"
+		                     MinWidth="450"
+		                     materialDesign:ShadowAssist.ShadowDepth="Depth3">
+			<Grid>
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition />
+					<!--<RowDefinition Height="Auto" />-->
+				</Grid.RowDefinitions>
+				<materialDesign:ColorZone Mode="PrimaryMid"
+				                          Padding="15"
+				                          Grid.Row="0">
+					<StackPanel Orientation="Horizontal">
+						<materialDesign:PackIcon VerticalAlignment="Center"
+						                         Kind="AccountStarVariant"
+						                         Height="26"
+						                         Width="26"></materialDesign:PackIcon>
+						<TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+						           Text="Adviser List"
+						           Margin="10,0,0,0" />
+					</StackPanel>
+
+				</materialDesign:ColorZone>
+
+				<Grid Margin="15"
+				      Grid.Row="1"
+				      Height="32">
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<materialDesign:PackIcon Grid.Column="0"
+					                         VerticalAlignment="Center"
+					                         Kind="Magnify"
+					                         Opacity=".80"
+					                         Height="Auto"
+					                         Width="Auto"
+					                         Margin="0,4" />
+					<TextBox Grid.Column="1"
+					         Text="{Binding Search, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=700}"
+					         materialDesign:HintAssist.Hint="Search a teacher"
+					         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+					         BorderThickness="0" />
+					<Button Grid.Column="2"
+					        Style="{DynamicResource MaterialDesignToolButton}"
+					        Height="Auto"
+					        HorizontalAlignment="Right">
+						<materialDesign:PackIcon Kind="Send"
+						                         Opacity=".80"
+						                         Margin="8 0 0 0" />
+					</Button>
+				</Grid>
+				<ListBox Grid.Row="2"
+				         Margin="15,0,15,15"
+				         MaxHeight="450"
+				         SelectedItem="{Binding SelectedTeacher}"
+				         ItemsSource="{Binding Teachers}"
+				         SelectedIndex="0"
+				         VerticalAlignment="Top"
+				         VirtualizingStackPanel.IsVirtualizing="True"
+				         SelectionMode="Single">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding FullName}"
+							           FontSize="15"
+							           Foreground="#373737" />
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Grid>
+		</materialDesign:Card>
+		<materialDesign:Card VerticalAlignment="Stretch"
+		                     Grid.Column="1"
+		                     Margin="20,0,0,0"
+		                     MinWidth="450"
+		                     materialDesign:ShadowAssist.ShadowDepth="Depth3">
+			<Grid>
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition />
+					<!--<RowDefinition Height="Auto" />-->
+				</Grid.RowDefinitions>
+				<materialDesign:ColorZone Mode="PrimaryMid"
+				                          Padding="15"
+				                          Grid.Row="0">
+					<StackPanel Orientation="Horizontal">
+						<materialDesign:PackIcon VerticalAlignment="Center"
+						                         Kind="CallSplit"
+						                         Height="26"
+						                         Width="26"></materialDesign:PackIcon>
+						<TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+						           Text="Section List"
+						           Margin="10,0,0,0" />
+					</StackPanel>
+
+				</materialDesign:ColorZone>
+
+				<Grid Grid.Row="1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<ComboBox Margin="5"
+							  DisplayMemberPath="Name"
+							  materialDesign:HintAssist.Hint="Select Section"
+					          ItemsSource="{Binding Sections}"
+					          SelectedItem="{Binding SelectedSection}"></ComboBox>
+					<Button materialDesign:ShadowAssist.ShadowDepth="Depth3"
+					        Grid.Column="1"
+							Command="{Binding AddCommand}"
+					        Margin="5">Add</Button>
+				</Grid>
+				<ListBox Grid.Row="2"
+				         Margin="15,15,15,15"
+				         MaxHeight="450"
+				         SelectedItem="{Binding SelectedAdviserSection}"
+				         ItemsSource="{Binding AdviserSections}"
+				         SelectedIndex="0"
+						 HorizontalContentAlignment="Stretch"
+				         VerticalAlignment="Top"
+				         VirtualizingStackPanel.IsVirtualizing="True"
+				         SelectionMode="Single">
+					<i:Interaction.Behaviors>
+						<common:SelectItemOnButtonClick />
+					</i:Interaction.Behaviors>
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+								<TextBlock Text="{Binding Name}"
+								           FontSize="15"
+								           Foreground="#373737" />
+								<Button ToolTip="Delete"
+								        Style="{DynamicResource MaterialDesignToolButton}"
+								        Grid.Column="1"
+								        Width="28"
+								        Height="28"
+								        HorizontalAlignment="Right"
+								        Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+								        Visibility="{Binding IsSelected, Converter={StaticResource BoolToVisibilityCollapsed}, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}">
+									<Viewbox Width="26"
+									         Height="26">
+										<materialDesign:PackIcon Kind="Delete" />
+									</Viewbox>
+
+								</Button>
+							</Grid>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Grid>
+		</materialDesign:Card>
+	</Grid>
+</UserControl>

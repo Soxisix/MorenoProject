@@ -1,0 +1,287 @@
+﻿<UserControl x:Class="MorenoSystem.Views.Library.BookEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MorenoSystem.Views.Library"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:library="clr-namespace:MorenoSystem.ViewModels.Library"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="15"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             MaxHeight="615"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             d:DataContext="{d:DesignInstance Type=library:BookListViewModel, IsDesignTimeCreatable=True}">
+	<materialDesign:Card>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="Auto" />
+				<RowDefinition
+					Height="1*" />
+			</Grid.RowDefinitions>
+			<materialDesign:ColorZone
+				Mode="PrimaryMid"
+				Padding="10">
+				<StackPanel
+					Orientation="Horizontal">
+					<Button
+						ToolTip="Go back"
+						Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+						Width="50"
+						Height="34"
+						VerticalAlignment="Bottom"
+						Style="{StaticResource MaterialDesignToolForegroundButton}"						HorizontalContentAlignment="Center"
+						HorizontalAlignment="Right">
+						<Button.CommandParameter>
+							<system:Boolean>False</system:Boolean>
+						</Button.CommandParameter>
+						<Viewbox>
+							<materialDesign:PackIcon HorizontalAlignment="Right" Kind="ArrowLeft"></materialDesign:PackIcon>
+						</Viewbox>
+					</Button>
+					<TextBlock
+						Style="{StaticResource MaterialDesignHeadlineTextBlock}" VerticalAlignment="Center"
+						Margin="10,0">
+						Edit Book
+					</TextBlock>
+
+				</StackPanel>
+			</materialDesign:ColorZone>
+			<ScrollViewer Grid.Row="1">
+
+				<Grid Margin="20">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+					</Grid.RowDefinitions>
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="0"
+						FontWeight="SemiBold"
+						Text="Title"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="1"
+						FontWeight="SemiBold"
+						Text="Author"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="2"
+						FontWeight="SemiBold"
+						Text="Publisher"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="3"
+						FontWeight="SemiBold"
+						Text="Category"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="4"
+						FontWeight="SemiBold"
+						Text="Published Date"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="5"
+						FontWeight="SemiBold"
+						Text="Quantity"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="6"
+						FontWeight="SemiBold"
+						Text="Damaged"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="7"
+						FontWeight="SemiBold"
+						Text="Outdated"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />
+					<!--<TextBlock
+						TextWrapping="Wrap"
+						Grid.Column="0"
+						Grid.Row="6"
+						FontWeight="SemiBold"
+						Text="Total Quantity"
+						VerticalAlignment="Center"
+						Margin="0,0,10,0" />-->
+
+					<TextBox
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						Grid.Row="0"
+						Text="{Binding SelectedBook.Title, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBox>
+					<TextBox
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						Grid.Row="1"
+						Text="{Binding SelectedBook.Author, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBox>
+					<TextBox
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						Grid.Row="2"
+						Text="{Binding SelectedBook.Publisher, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBox>
+					<ComboBox
+						
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						ItemsSource="{Binding Categories}"
+						MaxWidth="200"
+						Grid.Column="1"
+						Grid.Row="3"
+						DisplayMemberPath="Name"
+						SelectedItem="{Binding SelectedBook.Category, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</ComboBox>
+					<DatePicker
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						MaxWidth="200"
+						Grid.Row="4"
+						PreviewTextInput="UIElement_OnPreviewTextInput"
+						SelectedDate="{Binding SelectedBook.PublishedYear, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200" 
+						Grid.Column="1"/>
+					<TextBox
+						PreviewTextInput="UIElement_OnPreviewTextInput"
+						
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						
+						Grid.Row="5"
+						Text="{Binding SelectedBook.Quantity, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+						
+					</TextBox>
+					<TextBox
+						PreviewTextInput="UIElement_OnPreviewTextInput"
+						
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						
+						Grid.Row="6"
+						Text="{Binding SelectedBook.Damaged, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBox>
+					
+					<TextBox
+						PreviewTextInput="UIElement_OnPreviewTextInput"
+						
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						
+						Grid.Row="7"
+						Text="{Binding SelectedBook.Outdated, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBox>
+					<!--<TextBox
+						materialDesign:ValidationAssist.OnlyShowOnFocus="True"
+						TextWrapping="Wrap"
+						MaxWidth="200"
+						Grid.Column="1"
+						Grid.Row="6"
+						Text="{Binding Quantity, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+						VerticalAlignment="Center" MinWidth="200">
+
+					</TextBox>-->
+
+					<Button
+						Grid.Row="8"
+						Grid.Column="1"
+						Content="Update"
+						Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+						VerticalAlignment="Bottom"
+						HorizontalContentAlignment="Center"
+						HorizontalAlignment="Right"
+						Margin="0,20,10,0" >
+						<Button.CommandParameter>
+							<system:String>Update</system:String>
+						</Button.CommandParameter>
+					</Button>
+					<!--<Grid x:Name="ErrorsSummaryContainer"
+					      Grid.Column="0"
+					      Grid.Row="7"
+					      Visibility="{Binding IsValid, Converter={StaticResource BoolToVisibilityCollapsed}}"
+					      Margin="0,10,10,0">
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+
+						<TextBlock Text=""
+						           Foreground="Red"
+						           FontWeight="SemiBold" />
+						<TextBlock Grid.Row="1"
+						           Text="{Binding ValidationErrorsString}"
+						           Foreground="Red"
+						           Margin="0,5,0,0" />
+
+					</Grid>-->
+
+				</Grid>
+			</ScrollViewer>
+
+		</Grid>
+
+	</materialDesign:Card></UserControl>

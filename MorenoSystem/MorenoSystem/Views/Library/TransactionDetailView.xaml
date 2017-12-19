@@ -1,0 +1,203 @@
+﻿<UserControl x:Class="MorenoSystem.Views.Library.TransactionDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MorenoSystem.Views.Library"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:common="clr-namespace:MorenoSystem.Common"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Stretch"
+             d:DesignWidth="1200"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+	<materialDesign:Card>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="1*" />
+			</Grid.RowDefinitions>
+			<materialDesign:ColorZone Mode="PrimaryMid"
+			                          Padding="10">
+				<StackPanel Orientation="Horizontal">
+					<Button ToolTip="Go back"
+					        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+					        Width="50"
+					        Height="34"
+					        VerticalAlignment="Bottom"
+					        Style="{StaticResource MaterialDesignToolForegroundButton}"
+					        HorizontalContentAlignment="Center"
+					        HorizontalAlignment="Right">
+						<Button.CommandParameter>
+							<system:Boolean>False</system:Boolean>
+						</Button.CommandParameter>
+						<Viewbox>
+							<materialDesign:PackIcon HorizontalAlignment="Right"
+							                         Kind="ArrowLeft"></materialDesign:PackIcon>
+						</Viewbox>
+					</Button>
+					<TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+					           VerticalAlignment="Center"
+					           Margin="10,0"
+					           Text="{Binding SelectedTeacher.FullName}"></TextBlock>
+
+				</StackPanel>
+			</materialDesign:ColorZone>
+			<ScrollViewer Grid.Row="1">
+				<Grid Margin="20">
+					<Grid.RowDefinitions>
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+					</Grid.RowDefinitions>
+					<materialDesign:Card VerticalAlignment="Stretch"
+					                     Grid.Column="0"
+					                     MinWidth="450"
+					                     materialDesign:ShadowAssist.ShadowDepth="Depth3">
+						<Grid>
+
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<materialDesign:ColorZone Mode="PrimaryMid"
+							                          Padding="15"
+							                          Grid.Row="0">
+								<StackPanel Orientation="Horizontal">
+									<materialDesign:PackIcon VerticalAlignment="Center"
+									                         Kind="Book"
+									                         Height="26"
+									                         Width="26"></materialDesign:PackIcon>
+									<TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+									           Text="Borrowed Book List"
+									           Margin="10,0,0,0" />
+								</StackPanel>
+
+							</materialDesign:ColorZone>
+						</Grid>
+					</materialDesign:Card>
+					<!--<Grid Margin="15"
+					      Grid.Row="1"
+					      Height="32">
+
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<materialDesign:PackIcon Grid.Column="0"
+						                         VerticalAlignment="Center"
+						                         Kind="Magnify"
+						                         Opacity=".80"
+						                         Height="Auto"
+						                         Width="Auto"
+						                         Margin="0,4" />
+						<TextBox Grid.Column="1"
+						         Text="{Binding SearchStudent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Delay=700}"
+						         materialDesign:HintAssist.Hint="Search a book"
+						         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+						         BorderThickness="0" />
+						<Button Grid.Column="2"
+						        Style="{DynamicResource MaterialDesignToolButton}"
+						        Height="Auto"
+						        HorizontalAlignment="Right">
+							<materialDesign:PackIcon Kind="Send"
+							                         Opacity=".80"
+							                         Margin="8 0 0 0" />
+						</Button>
+					</Grid>-->
+					<materialDesign:Card Grid.Row="2">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition />
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<ListView Height="430"
+							          SelectedItem="{Binding SelectedBorrow}"
+							          ItemsSource="{Binding BorrowedBooks}"
+							          SelectedIndex="0"
+							          VerticalAlignment="Top"
+							          VirtualizingPanel.IsVirtualizing="True"
+							          SelectionMode="Single">
+								<i:Interaction.Behaviors>
+									<common:SelectItemOnButtonClick />
+								</i:Interaction.Behaviors>
+								<ListView.View>
+									<GridView>
+										<GridViewColumn Header="Date Borrowed"
+										                DisplayMemberBinding="{Binding DateBorrowed, StringFormat=d}" />
+
+										<GridViewColumn Header="Title"
+										                DisplayMemberBinding="{Binding Book.Title}" />
+										<GridViewColumn Header="Author"
+										                DisplayMemberBinding="{Binding Book.Author}" />
+										<GridViewColumn Header="Category"
+										                DisplayMemberBinding="{Binding Book.Category.Name}" />
+										<GridViewColumn Header="Borrowed Quantity"
+										                DisplayMemberBinding="{Binding QuantityBorrowed}" />
+										<GridViewColumn>
+											<GridViewColumn.CellTemplate>
+												<DataTemplate>
+
+													<Button Style="{DynamicResource MaterialDesignToolButton}"
+													        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+													        Content="RETURN">
+														<Button.CommandParameter>
+															<system:String>RETURN</system:String>
+														</Button.CommandParameter>
+													</Button>
+												</DataTemplate>
+											</GridViewColumn.CellTemplate>
+										</GridViewColumn>
+									</GridView>
+								</ListView.View>
+							</ListView>
+							<!--<materialDesign:ColorZone Mode="PrimaryMid"
+							                          Grid.Row="1"
+							                          Margin="0,20,0,0"
+							                          Height="40"/>
+							<Button ToolTip="Register new book"
+							        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+							        Command="{Binding AddCommand}"
+							        VerticalAlignment="Bottom"
+							        HorizontalAlignment="Right"
+							        Grid.Row="0"
+							        Margin="0 0 28 -50"
+							        Height="50"
+							        Width="50">
+								<Viewbox Width="22"
+								         Height="22">
+									--><!--<Canvas Width="24"
+						        Height="24">
+							<Path Data="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+							      Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+						</Canvas>--><!--
+									<materialDesign:PackIcon Kind="BookPlus"></materialDesign:PackIcon>
+								</Viewbox>
+							</Button>-->
+						</Grid>
+					</materialDesign:Card>
+				</Grid>
+			</ScrollViewer>
+		</Grid>
+		
+	</materialDesign:Card>
+
+</UserControl>
+
+
+
+
+
+
+

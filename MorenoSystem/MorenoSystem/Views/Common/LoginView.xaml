@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="MorenoSystem.Views.Common.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MorenoSystem.Views.Common"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:students="clr-namespace:MorenoSystem.ViewModels.Students"
+             xmlns:morenoSystem="clr-namespace:MorenoSystem"
+             xmlns:helper="clr-namespace:MorenoSystem.Common.Converter.Helper"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="14"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"      
+             d:DataContext="{d:DesignInstance Type=morenoSystem:MainViewModel, IsDesignTimeCreatable=True}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <materialDesign:Card>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                Width="20" />
+                <ColumnDefinition
+                Width="Auto" />
+                <ColumnDefinition Width="310" />
+                <ColumnDefinition
+                Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                Height="Auto" />
+                <RowDefinition Height="43.666"/>
+                <RowDefinition
+                Height="Auto" />
+                <RowDefinition
+                Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <materialDesign:ColorZone Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Padding="10" Mode="PrimaryMid">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Account" Height="26" Width="26"></materialDesign:PackIcon>
+                    <TextBlock
+                        Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+
+                        HorizontalAlignment="Left"
+                        Text="Login"  />
+                </StackPanel>
+            </materialDesign:ColorZone>
+            <materialDesign:PackIcon
+                Width="20" Height="20"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Grid.Row="2"
+            Grid.Column="1"
+            Kind="Account"
+            Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}" Margin="4,14" />
+            <TextBox
+            x:Name="NameTextBox"
+            Grid.Column="2"
+            Grid.Row="2"
+            Width ="300"
+            Text="{Binding Username, Mode=TwoWay}"
+            materialDesign:HintAssist.Hint="Username"
+            Margin="5" />
+            <materialDesign:PackIcon
+                Width="20" Height="20"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Grid.Row="3"
+            Grid.Column="1"
+            Kind="Key"
+            Foreground="{Binding ElementName=PasswordBox1, Path=BorderBrush}" Margin="4,10" />
+
+            <PasswordBox
+            x:Name="PasswordBox1"
+            Grid.Row="3"
+            Width ="300"
+            Grid.Column="2"
+            Margin="5"
+            FontSize="14"
+            helper:PasswordBoxAssistant.BindPassword ="true"
+            helper:PasswordBoxAssistant.BoundPassword ="{Binding Password, Mode=TwoWay, ValidatesOnDataErrors=True}"
+            materialDesign:HintAssist.Hint="Password"
+            VerticalContentAlignment="Center" />
+            <StackPanel
+            Grid.Row="1"
+            Grid.Column="2"
+            Orientation="Vertical" >
+               
+                <ComboBox
+                Padding="5"
+                HorizontalAlignment="Center"
+                ItemsSource="{Binding LoginItems}"
+                SelectedItem="{Binding SelectedLoginItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Foreground="#272727"
+                Margin="37,10,37,0" />
+                <Label Foreground="DarkRed" Content="{Binding LoginMessage}" Visibility="{Binding LoginError, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel
+            Grid.Row="4" 
+            Orientation="Horizontal"
+            Grid.Column="2" HorizontalAlignment="Right" Margin="0,30,0,20">
+                <Button
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                IsDefault="True"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Login"
+                Command="{Binding LoginCommand}"
+                Width="100"/>
+                <Button
+                IsCancel="True"
+                Style="{DynamicResource MaterialDesignFlatButton}"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Exit"
+                Width="100"
+                Command="{Binding ExitCommand}">
+
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </materialDesign:Card>
+</UserControl>
